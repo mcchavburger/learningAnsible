@@ -1,0 +1,19 @@
+---
+  - hosts: localhost
+    vars:
+        userFile: /root/projects/learningAnsible/familyList
+    tasks:
+    - name: create family list file
+      file:
+        state: touch
+        path: "{{ userFile }}"
+    - name: list users
+      lineinfile:
+        path: "{{ userFile }}"
+        line: "{{ item }}"
+      with_items:
+        - "{{ Direct_Family }}"
+        - "{{ Grand_Parents }}"
+        - "{{ Uncles }}"
+        - "{{ Aunties }}"
+        - "{{ Cousins }}"

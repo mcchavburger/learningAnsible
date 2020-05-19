@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  vars:
+    inv_file: /root/projects/learningAnsible/inv.txt
+  tasks:
+  - name: create file
+    file:
+      path: "{{inv_file}}"
+      state: touch
+  - name: generate inventory
+    lineinfile:
+      path: "{{inv_file}}"
+      line: "{{ groups['labservers']|join(' ') }}"
