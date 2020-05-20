@@ -1,0 +1,15 @@
+---
+# vars file for Roles/dansTestRole
+server_environments:
+  prod:
+    name: ProdServer
+    username: prodUsername
+    fqdn: ProdFqdn.danlab.local
+  staging:
+    name: StagingServer
+    username: StagingUsername
+    fqdn: StagingFqdn.danlab.local
+  lab:
+    name: LabServer
+    username: LabUsername
+    fqdn: LabFqdn.danlab.local

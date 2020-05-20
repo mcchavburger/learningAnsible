@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - /root/projects/learningAnsible/EX407_Exam/Roles/dansTestRole

@@ -1,0 +1,11 @@
+---
+# tasks file for Roles/dansTestRole
+- name: print stuff
+  debug:
+    msg: "Region {{ item.key }} is {{ item.value.name }} ({{ item.value.fqdn}})"
+  loop: "{{ lookup('dict', server_environments) }}"
+- name: set_fact when region in key
+  debug:
+    msg: "{{ item.value.fqdn }}"
+  loop: "{{ lookup('dict', server_environments) }}"
+  when: "region in item.key"
