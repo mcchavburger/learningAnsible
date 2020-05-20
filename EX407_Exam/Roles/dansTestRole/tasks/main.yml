@@ -5,7 +5,7 @@
     server_fqdn: "{{ item.value.fqdn }}"
     server_username: "{{ item.value.username }}"
   loop: "{{ lookup('dict', server_environments) }}"
-  when: "region in item.key"
+  when: "region | lower in item.key"
 - name: print vars
   debug:
     msg: "Server is {{ server_name }} fqdn is {{ server_fqdn }} username is {{ server_username }}"
