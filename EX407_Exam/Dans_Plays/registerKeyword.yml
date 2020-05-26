@@ -1,0 +1,10 @@
+---
+- hosts: labservers
+  
+  tasks:
+  - name: create file
+    file:
+      path: /tmp/newFile
+      state: touch
+    register: output
+  - debug: msg="register output is {{ output }}"
