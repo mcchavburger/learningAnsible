@@ -1,0 +1,5 @@
+---
+# tasks file for Roles/vmware_vc_createApiSession
+- name: Get vCenter API Session
+  uri:
+    url: "https"
