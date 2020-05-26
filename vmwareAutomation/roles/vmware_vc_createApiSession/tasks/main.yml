@@ -1,0 +1,14 @@
+---
+- name: Get vmware_api_session_id from the vCenter
+  uri:
+    url: "https://{{ vcfqdn | lower }}/rest/com/vmware/cis/session"
+    method: POST
+    force_basic_auth: yes
+    validate_certs: "{{ http_validate_certs }}"
+    user: "{{ vsphere_username }}"
+    password: "{{ vsphere_password }}"
+  register: session_id_response
+
+- name: Set the vmware_api_session_id to a fact of the same name.
+  set_fact:
+    vmware_api_session_id: "{{ session_id_response.cookies }}"

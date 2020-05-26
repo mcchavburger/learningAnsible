@@ -1,0 +1,5 @@
+---
+# vars file for Roles/vmware_vc_createApiSession
+# tasks file for Roles/vmware_vc_createApiSession
+http_accept: "application/json"
+http_validate_certs: no
