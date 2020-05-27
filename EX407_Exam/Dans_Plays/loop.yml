@@ -1,0 +1,12 @@
+# "{{ item }}" is a keyword
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: create users
+      user:
+        name: "{{ item }}"
+      with_items:
+        - Daniel
+        - oliver
+        - Johnson

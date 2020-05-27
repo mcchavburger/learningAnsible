@@ -1,5 +1,6 @@
 ---
-- name: Create Virtual Machine
+# tasks file for vmware_get_templates
+- name: Get vSphere Virtual Machine Template
   uri:
     url: "https://{{ vcfqdn | lower }}/rest/com/vmware/cis/session"
     method: POST

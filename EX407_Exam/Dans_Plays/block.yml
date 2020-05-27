@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Start of my Block 
+      block:
+      # block of code
+        - modulename:
+            moduleAtt1: "Whatever"
+            moduleAtt2: "Whatever"
+      rescue:
+      # only will run if above errors
+        - modulename:
+            moduleAtt1: "whatever"
+            moduleAtt2: "whatever"
+      always:
+        # always runs whatever
+        - modulename:
+            moduleAtt1: "whatever"
+            moduleAtt2: "whatever"
+
